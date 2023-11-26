@@ -1,24 +1,15 @@
-# README
+### README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### What is this?
 
-Things you may want to cover:
+A basic demo app showing the pagy-jsom gem.
 
-* Ruby version
+### How does it work?
 
-* System dependencies
+* Create a collection of 100 movies:
 
-* Configuration
+`rake db:seed`
 
-* Database creation
+Now go to the root route. Paginate using the gem.
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
