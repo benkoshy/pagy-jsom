@@ -1,9 +1,19 @@
 class MoviesController < ApplicationController
+  include Paginable
+
   before_action :set_movie, only: %i[ show edit update destroy ]
 
   # GET /movies or /movies.json
-  def index
-    @movies = Movie.all
+  def index    
+    @paginated = paginate(Movie.all)
+    @movies =   @paginated.items
+
+    @poor_mans_json_serialization = {data: @movies.as_json, links: @paginated.links.to_h}.as_json
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @poor_mans_json_serialization}
+    end
   end
 
   # GET /movies/1 or /movies/1.json

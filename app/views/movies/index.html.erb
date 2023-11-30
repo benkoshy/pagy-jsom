@@ -2,6 +2,23 @@
 
 <h1>Movies</h1>
 
+<h3>
+  <%= link_to("First", @paginated.links.to_h[:first]) %>
+  <%= link_to("Previous", @paginated.links.to_h[:prev]) %>
+  <%= link_to("Next", @paginated.links.to_h[:next]) %>
+  <%= link_to("Last", @paginated.links.to_h[:last]) %>
+</h3>
+
+<p> Paginated Meta (hash): </p>
+<%= @paginated.meta.to_h %>
+
+<p> Paginated links: </p>
+<%= @paginated.links.to_h %>
+
+<p> Serialization:</p>
+
+<%= @poor_mans_json_serialization %>
+
 <div id="movies">
   <% @movies.each do |movie| %>
     <%= render movie %>

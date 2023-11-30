@@ -72,3 +72,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "jsom-pagination", "~> 1.0"
